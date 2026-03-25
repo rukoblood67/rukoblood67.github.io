@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Svetainė</title>
+    <style>
+     body {
+       -webkit-user-select: none; /* Safari */
+       -ms-user-select: none;     /* IE 10 and older */
+       user-select: none;         /* Standard syntax */
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Atsakyk į visus klausimus teisingai ir gausi raidę</h1>
+    
+    <br>
+    <h2 id="pytanie">Kuriais metais buvo įkurta mokykla Nemenčinėje?</h2>
+    <br>
+    <input placeholder="Atsakymas" type="number" id="odp"/></br><button onclick="sprawdzic()">Patvirtinti</button>
+    
+    <br>
+    <h2 id="prawidlowo"></h2>
+    <script>
+      var Nr_woprosa = 1;
+      const input = document.getElementById("odp");
+      const tekstPytania = document.getElementById("pytanie");
+      const prawidlowo = document.getElementById("prawidlowo");
+      
+      function sprawdzic() {
+        const odp = input.value;
+        console.log(odp);
+        
+        if (Nr_woprosa === 1 && odp === "1865") {
+          prawidlowo.textContent = "Teisingai! Kitas klausimas:";
+          Nr_woprosa = 2;
+          pytanie.textContent = "Kada gimė gimnazijos globėjas Konstantinas Parčevskis?"
+        }
+        else if (Nr_woprosa === 1 && odp !== "1865") {
+          prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
+        }
+        
+        
+        else if (Nr_woprosa === 2 && odp === "1801") {
+          prawidlowo.textContent = "Teisingai! Kitas klausimas:";
+          Nr_woprosa = 3;
+          pytanie.textContent = "Kokią įkūrimo sukaktį šiais metais minėjo K. Parčevskio gimnazija?"
+        }
+        else if (Nr_woprosa === 2 && odp !== "1801") {
+          prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
+        }
+        
+      
+        else if (Nr_woprosa === 3 && odp === "160") {
+          prawidlowo.textContent = "Teisingai!";
+          pytanie.textContent = "Tavo raidė yra: A"
+        }
+        else if (Nr_woprosa === 3 && odp !== "160") {
+          prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
+        }
+      }
+      
+    </script>
+  </body>
+</html>
