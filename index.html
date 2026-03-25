@@ -17,7 +17,7 @@
     <br>
     <h2 id="pytanie">W którym roku powstała szkoła w Niemenczynie?</h2>
     <br>
-    <input placeholder="Odpowiedz" type="number" id="odp"/></br><button onclick="sprawdzic()">Potwierdzic</button>
+    <input placeholder="Odpowiedz" type="number" id="odp" autofocus/></br><button onclick="sprawdzic()">Potwierdzic</button>
     
     <br>
     <h2 id="prawidlowo"></h2>
@@ -34,6 +34,8 @@
         if (Nr_woprosa === 1 && odp === "1865") {
           prawidlowo.textContent = "Prawidlowo! Nastepne pytanie:";
           Nr_woprosa = 2;
+          input.value = ""
+          input.focus()
           pytanie.textContent = "Kiedy urodzil sie patron gimnazjum Konstanty Parczewski?"
         }
         else if (Nr_woprosa === 1 && odp !== "1865") {
