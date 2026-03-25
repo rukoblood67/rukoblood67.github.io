@@ -17,7 +17,7 @@
     <br>
     <h2 id="pytanie">Kuriais metais buvo įkurta mokykla Nemenčinėje?</h2>
     <br>
-    <input placeholder="Atsakymas" type="number" id="odp"/></br><button onclick="sprawdzic()">Patvirtinti</button>
+    <input placeholder="Atsakymas" type="number" id="odp" autofocus/></br><button onclick="sprawdzic()">Patvirtinti</button>
     
     <br>
     <h2 id="prawidlowo"></h2>
@@ -34,6 +34,8 @@
         if (Nr_woprosa === 1 && odp === "1865") {
           prawidlowo.textContent = "Teisingai! Kitas klausimas:";
           Nr_woprosa = 2;
+          input.value = ""
+          input.focus()
           pytanie.textContent = "Kada gimė gimnazijos globėjas Konstantinas Parčevskis?"
         }
         else if (Nr_woprosa === 1 && odp !== "1865") {
@@ -44,6 +46,8 @@
         else if (Nr_woprosa === 2 && odp === "1801") {
           prawidlowo.textContent = "Teisingai! Kitas klausimas:";
           Nr_woprosa = 3;
+          input.value = ""
+          input.focus()
           pytanie.textContent = "Kokią įkūrimo sukaktį šiais metais minėjo K. Parčevskio gimnazija?"
         }
         else if (Nr_woprosa === 2 && odp !== "1801") {
