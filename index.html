@@ -32,11 +32,11 @@
         console.log(odp);
         
         if (Nr_woprosa === 1 && odp === "1865") {
-          prawidlowo.textContent = "Prawidlowo! Nastepne pytanie:";
+          prawidlowo.textContent = "Prawidłowo! Nastepne pytanie:";
           Nr_woprosa = 2;
           input.value = ""
           input.focus()
-          pytanie.textContent = "Kiedy urodzil sie patron gimnazjum Konstanty Parczewski?"
+          pytanie.textContent = "W którym roku urodził się patron gimnazjum Konstanty Parczewski?"
         }
         else if (Nr_woprosa === 1 && odp !== "1865") {
           prawidlowo.textContent = "Nieprawidlowo! Probuj jeszcze raz";
@@ -44,8 +44,10 @@
         
         
         else if (Nr_woprosa === 2 && odp === "1801") {
-          prawidlowo.textContent = "Prawidlowo! Nastepne pytanie:";
+          prawidlowo.textContent = "Prawidłowo! Nastepne pytanie:";
           Nr_woprosa = 3;
+          input.value = ""
+          input.focus()
           pytanie.textContent = "Którą rocznicę założenia obchodziło w tym roku Gimnazjum im. K. Parczewskiego?"
         }
         else if (Nr_woprosa === 2 && odp !== "1801") {
@@ -54,7 +56,7 @@
         
       
         else if (Nr_woprosa === 3 && odp === "160") {
-          prawidlowo.textContent = "Prawidlowo!";
+          prawidlowo.textContent = "Prawidłowo!";
           pytanie.textContent = "Twoja litera to: A"
         }
         else if (Nr_woprosa === 3 && odp !== "160") {
