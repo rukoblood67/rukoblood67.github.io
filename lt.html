@@ -1,69 +1,127 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Svetainė</title>
-    <style>
-     body {
-       -webkit-user-select: none; /* Safari */
-       -ms-user-select: none;     /* IE 10 and older */
-       user-select: none;         /* Standard syntax */
+<!DOCTYPE html><html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svetainė</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  user-select: none;
 }
 
-    </style>
-  </head>
-  <body>
-    <h1>Atsakyk į visus klausimus teisingai ir gausi raidę</h1>
-    
-    <br>
-    <h2 id="pytanie">Kuriais metais buvo įkurta mokykla Nemenčinėje?</h2>
-    <br>
-    <input placeholder="Atsakymas" type="number" id="odp" autofocus/></br><button onclick="sprawdzic()">Patvirtinti</button>
-    
-    <br>
-    <h2 id="prawidlowo"></h2>
-    <script>
-      var Nr_woprosa = 1;
-      const input = document.getElementById("odp");
-      const tekstPytania = document.getElementById("pytanie");
-      const prawidlowo = document.getElementById("prawidlowo");
-      
-      function sprawdzic() {
-        const odp = input.value;
-        console.log(odp);
-        
-        if (Nr_woprosa === 1 && odp === "1865") {
-          prawidlowo.textContent = "Teisingai! Kitas klausimas:";
-          Nr_woprosa = 2;
-          input.value = ""
-          input.focus()
-          pytanie.textContent = "Kada gimė gimnazijos globėjas Konstantinas Parčevskis?"
-        }
-        else if (Nr_woprosa === 1 && odp !== "1865") {
-          prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
-        }
-        
-        
-        else if (Nr_woprosa === 2 && odp === "1801") {
-          prawidlowo.textContent = "Teisingai! Kitas klausimas:";
-          Nr_woprosa = 3;
-          input.value = ""
-          input.focus()
-          pytanie.textContent = "Kokią įkūrimo sukaktį šiais metais minėjo Nemenčinės K. Parčevskio gimnazija?"
-        }
-        else if (Nr_woprosa === 2 && odp !== "1801") {
-          prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
-        }
-        
-      
-        else if (Nr_woprosa === 3 && odp === "160") {
-          prawidlowo.textContent = "Teisingai!";
-          pytanie.textContent = "Tavo raidė yra: A"
-        }
-        else if (Nr_woprosa === 3 && odp !== "160") {
-          prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
-        }
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+button {
+  background: #00c9a7;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #00a98f;
+  transform: scale(1.05);
+}
+
+#prawidlowo {
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Atsakyk į visus klausimus teisingai ir gausi raidę</h2><h1 id="pytanie">Kuriais metais buvo įkurta mokykla Nemenčinėje?</h1>
+
+<input placeholder="Atsakymas" type="number" id="odp" autofocus>
+<button onclick="sprawdzic()">Patvirtinti</button>
+
+<h2 id="prawidlowo"></h2>
+
+  </div>  <script>
+    var Nr_woprosa = 1;
+    const input = document.getElementById("odp");
+    const tekstPytania = document.getElementById("pytanie");
+    const prawidlowo = document.getElementById("prawidlowo");
+
+    function sprawdzic() {
+      const odp = input.value;
+
+      if (Nr_woprosa === 1 && odp === "1865") {
+        prawidlowo.textContent = "Teisingai! Kitas klausimas:";
+        Nr_woprosa = 2;
+        input.value = "";
+        input.focus();
+        tekstPytania.textContent = "Kada gimė gimnazijos globėjas Konstantinas Parčevskis?";
       }
-      
-    </script>
-  </body>
+      else if (Nr_woprosa === 1) {
+        prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
+      }
+
+      else if (Nr_woprosa === 2 && odp === "1801") {
+        prawidlowo.textContent = "Teisingai! Kitas klausimas:";
+        Nr_woprosa = 3;
+        input.value = "";
+        input.focus();
+        tekstPytania.textContent = "Kokią įkūrimo sukaktį šiais metais minėjo Nemenčinės K. Parčevskio gimnazija?";
+      }
+      else if (Nr_woprosa === 2) {
+        prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
+      }
+
+      else if (Nr_woprosa === 3 && odp === "160") {
+        prawidlowo.textContent = "Teisingai!";
+        tekstPytania.textContent = "Tavo raidė yra: A";
+      }
+      else if (Nr_woprosa === 3) {
+        prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
+      }
+    }
+  </script></body>
 </html>
