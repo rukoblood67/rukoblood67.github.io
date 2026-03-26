@@ -122,7 +122,7 @@ button:hover {
 
       else if (Nr_woprosa === 3 && odp === "160") {
         prawidlowo.textContent = "Teisingai!";
-        tekstPytania.textContent = "Tavo raidė yra: C";
+        tekstPytania.innerHtml = "Tavo raidė yra: <span class="final-letter">C</span>";
       }
       else if (Nr_woprosa === 3) {
         prawidlowo.textContent = "Neteisingai! Bandyk dar kartą";
